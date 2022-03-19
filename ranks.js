@@ -100,7 +100,6 @@ const calcRanks = document.querySelector(`.calc-ranks`);
 for (let i = 0; i < playerNames.length; i++) {
   const input = document.createElement("input");
   const label = document.createElement("label");
-  // const br = document.createElement(`br`);
   const div = document.createElement("div");
   input.type = "checkbox";
   input.classList.add(`player-${i}`, "form-check-input");
@@ -117,8 +116,6 @@ for (let i = 0; i < playerNames.length; i++) {
   divPlayerNames.appendChild(div);
   document.querySelector(`.div${i}`).appendChild(label);
   document.querySelector(`.div${i}`).appendChild(input);
-
-  // divPlayerNames.appendChild(br);
 }
 
 calcRanks.addEventListener(`click`, function () {
@@ -242,4 +239,5 @@ calcRanks.addEventListener(`click`, function () {
   localStorage.setItem("totalWonder", JSON.stringify(totalWonder));
   localStorage.setItem("totalKVK", JSON.stringify(totalKVK));
   localStorage.setItem("totalShields", JSON.stringify(totalShields));
+  // window.location.href = "/tables.html";
 });
