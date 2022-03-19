@@ -186,7 +186,7 @@ let indexvalue = 1;
 for (let i = 0; i < playerNames.length; i++) {
   const average = Math.trunc((scores[i] / totalRally) * 100);
 
-  if (average > 25) {
+  if (average > 18) {
     const row = document.createElement("tr");
     const index = document.createElement("th");
     row.classList.add(`tr${i}`);
