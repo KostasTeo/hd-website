@@ -89,6 +89,8 @@ const playerNames = [
   "xMRTx",
   "xXLupenXx",
   "simpathelab",
+  "Prick Pan",
+  "Cavouras",
 ];
 playerNames.sort();
 const scores = JSON.parse(localStorage.getItem("scores"));
@@ -98,7 +100,42 @@ const shield = JSON.parse(localStorage.getItem("shield"));
 const wonder = JSON.parse(localStorage.getItem("wonder"));
 const kvk = JSON.parse(localStorage.getItem("kvk"));
 const totalRally = JSON.parse(localStorage.getItem("totalRally"));
+const totalCaps = JSON.parse(localStorage.getItem("totalCaps"));
+const totalHits = JSON.parse(localStorage.getItem("totalHits"));
+const totalShields = JSON.parse(localStorage.getItem("totalShields"));
+const totalWonder = JSON.parse(localStorage.getItem("totalWonder"));
+const totalKVK = JSON.parse(localStorage.getItem("totalKVK"));
 
+const totalTable = function () {
+  const firstTable = document.querySelector(`.total-rallies`);
+  const row = document.createElement("tr");
+  const totalRallies = document.createElement("td");
+  const totalCapedRallies = document.createElement("td");
+  const totalWonderRallies = document.createElement("td");
+  const totalHitRallies = document.createElement("td");
+  const totalShieldRallies = document.createElement("td");
+  const totalKVKRallies = document.createElement("td");
+  totalRallies.textContent = totalRally;
+  totalCapedRallies.textContent = totalCaps;
+  totalHitRallies.textContent = totalHits;
+  totalShieldRallies.textContent = totalShields;
+  totalKVKRallies.textContent = totalKVK;
+  totalWonderRallies.textContent = totalWonder;
+  totalRallies.classList.add("text-center");
+  totalCapedRallies.classList.add("text-center");
+  totalWonderRallies.classList.add("text-center");
+  totalHitRallies.classList.add("text-center");
+  totalShieldRallies.classList.add("text-center");
+  totalKVKRallies.classList.add("text-center");
+  firstTable.appendChild(row);
+  row.appendChild(totalRallies);
+  row.appendChild(totalCapedRallies);
+  row.appendChild(totalWonderRallies);
+  row.appendChild(totalHitRallies);
+  row.appendChild(totalShieldRallies);
+  row.appendChild(totalKVKRallies);
+};
+totalTable();
 const tableRow = function (num) {
   const row = document.createElement("tr");
   row.classList.add(`tr-${num}`);
@@ -123,6 +160,14 @@ const tableCell = function (num) {
   shieldTd.textContent = shield[num];
   wonderTd.textContent = wonder[num];
   kvkTd.textContent = kvk[num];
+  index.classList.add("text-center");
+  namesTd.classList.add("text-center");
+  scoresTd.classList.add("text-center");
+  capsTd.classList.add("text-center");
+  hitTd.classList.add("text-center");
+  shieldTd.classList.add("text-center");
+  wonderTd.classList.add("text-center");
+  kvkTd.classList.add("text-center");
   tRow.appendChild(index);
   tRow.appendChild(namesTd);
   tRow.appendChild(scoresTd);
@@ -137,20 +182,27 @@ for (let i = 0; i < playerNames.length; i++) {
   tableRow(i);
   tableCell(i);
 }
-
+let indexvalue = 1;
 for (let i = 0; i < playerNames.length; i++) {
   const average = Math.trunc((scores[i] / totalRally) * 100);
+
   if (average > 25) {
     const row = document.createElement("tr");
+    const index = document.createElement("th");
     row.classList.add(`tr${i}`);
     document.querySelector(".recommend").appendChild(row);
     const tRow = document.querySelector(`.tr${i}`);
     const namesTd = document.createElement("td");
     const averageTd = document.createElement("td");
+    index.textContent = indexvalue;
     namesTd.textContent = playerNames[i];
     averageTd.textContent = `${average}%`;
-    // tRow.appendChild(index);
+    index.classList.add("text-center");
+    namesTd.classList.add("text-center");
+    averageTd.classList.add("text-center");
+    tRow.appendChild(index);
     tRow.appendChild(namesTd);
     tRow.appendChild(averageTd);
+    indexvalue++;
   }
 }

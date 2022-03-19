@@ -9,67 +9,87 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
     crossorigin="anonymous"
   />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Permanent+Marker&family=Roboto:ital,wght@0,400;0,700;1,900&display=swap" rel="stylesheet">
+  
+  <script src="https://kit.fontawesome.com/f826f14134.js" crossorigin="anonymous"> </script>
   <link rel="stylesheet" href="css/styles.css">
+  
   </head>
   <body>
-    <div class="container">
+    <div class="container-fluid heading-container">
     <h1>Welcome to Hellenic Dynasty's rank Calculator!</h1>
   </div>
+ 
+  <h2 class="text-center">Select the players that joined the rally below</h2>
+  <hr>
     <form class="" action="tables.html" method="post">
-      <div class="container">
-        <div class="row">
-      <div class="player-names col-4"></div>
-      <br />
-      <br />
-      <br />
-      <div class="rally-type col-4 align-self-auto">
-        <div class="form-check">
-          <input class="form-check-input radio-input" type="radio" name="flexRadioDefault" id="cappedRally">
-          <label class="form-check-label radio-label" for="flexRadioDefault1">
-            Rally Capped! ☠
+      
+      <div style="width: 100%;margin: 0 auto;">
+      
+      
+      <div class="container-fluid first-container">
+        
+      <div class="player-names d-flex flex-wrap align-self-stretch"></div>
+    </div>
+  </div>
+<div class="container-2"><h2 class="text-center">Choose the Rally Type below!</h2>
+  <hr class="second-hr">
+      <div class="rally-type  d-flex justify-content-center ">
+        
+        <div class="form-check d-flex justify-content-center ">
+          <input class="form-check-input radio-input d-flex align-self-center" type="radio" name="flexRadioDefault" id="cappedRally">
+          <label class="form-check-label radio-label d-flex align-self-center" for="flexRadioDefault1">
+            Rally Capped!  <i class="fa-solid fa-skull d-flex align-self-center"></i>
           </label>
         </div>
-        <div class="form-check">
-          <input class="form-check-input radio-input" type="radio" name="flexRadioDefault" id="hitRally">
-          <label class="form-check-label radio-label" for="flexRadioDefault2">
-            Rally Hit! 👀
+        <div class="form-check d-flex">
+          <input class="form-check-input radio-input d-flex align-self-center" type="radio" name="flexRadioDefault" id="hitRally">
+          <label class="form-check-label radio-label d-flex align-self-center" for="flexRadioDefault2">
+            Rally Hit! <i class="fa-solid fa-house-fire d-flex align-self-center"></i>
           </label>
         </div>
-        <div class="form-check">
-          <input class="form-check-input radio-input" type="radio" name="flexRadioDefault" id="wonderRally">
-          <label class="form-check-label radio-label" for="flexRadioDefault1">
-            Wonder Rally!
-          </label>
+        <div class="form-check d-flex">
+          <input class="form-check-input radio-input d-flex align-self-center" type="radio" name="flexRadioDefault" id="wonderRally">
+          <label class="form-check-label radio-label d-flex align-self-center" for="flexRadioDefault1">
+            Wonder Rally!<i class="fa-solid fa-dragon d-flex align-self-center"></i>
         </div>
-        <div class="form-check">
-          <input class="form-check-input radio-input" type="radio" name="flexRadioDefault" id="shieldRally" >
-          <label class="form-check-label radio-label" for="flexRadioDefault2">
-            Shielded!😢
+        <div class="form-check d-flex">
+          <input class="form-check-input radio-input d-flex align-self-center" type="radio" name="flexRadioDefault" id="shieldRally" >
+          <label class="form-check-label radio-label d-flex align-self-center" for="flexRadioDefault2">
+            Shielded!<i class="fa-solid fa-shield d-flex align-self-center"></i>
           </label>
         </div>
         
         
-        
+   
       
       </div>
-      <div class="form-check form-switch col-4 kvk-switch d-flex ">
-        <input class="form-check-input" type="checkbox" role="switch" id="kvkRally">
-        <label class="form-check-label allign-content-end" for="kvkRally" >KVK RALLY!</label>
+    
+      <div class="form-check form-switch d-flex justify-content-center  kvk-switch ">
+        <input class="form-check-input d-flex align-self-center" type="checkbox" role="switch" id="kvkRally">
+        <label class="form-check-label d-flex align-self-center for="kvkRally" >KVK RALLY!<i class="fa-solid fa-horse-head"></i></label>
       </div>
     </div>
   </div>
-   <div class= "container">
+   <div class= "container-fluid button-container">
       
-        <div class = "d-grid gap-2 col-6 mx-auto">
+        <div class = "d-grid gap-2 col-3 mx-auto">
 
-      <button type="submit" class="calc-ranks btn-primary btn-lg"">Calculate ranks</button>
+      <button type="submit" class="calc-ranks btn-dark btn-lg"">Submit Rally</button>
     </div>
     
   </div>
     </form>
     <footer>
-      <div class="container">Youtube link</div>
-      <div>copyright</div>
+      <div class="container d-flex justify-content-center">
+    <a href="https://www.youtube.com/c/HellenicDynastyLords/"><i class="fa-brands fa-youtube fa-4x"></i></a>
+    <a href="https://linevoom.line.me/user/_dSWyEx5WrY-SMDH51mNJdw9CNtqSvn1HPhvwlc0?utm_medium=windows&utm_source=desktop&utm_campaign=Profile"><i class="fa-brands fa-line fa-4x"></i></a>
+    <a href="https://discord.gg/UxmVHqMnRA"><i class="fa-brands fa-discord fa-4x"></i></a>
+    </div>
+
+      <div class='container footer-container d-flex justify-content-center'>© 2022 H|D Developer Team</div>
     </footer>
     <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -77,5 +97,6 @@
     crossorigin="anonymous"
   ></script>
     <script src="ranks.js"></script>
+   
   </body>
 </html>

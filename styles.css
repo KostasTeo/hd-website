@@ -1,0 +1,121 @@
+body {
+  background-color: #fff5eb;
+  font-family: "Roboto", sans-serif;
+}
+label {
+  padding-left: 1rem;
+  font-size: 1.5rem;
+}
+h1 {
+  text-align: center;
+  padding: 5rem;
+  font-family: "Permanent Marker", cursive;
+  color: #fff5eb;
+}
+
+hr {
+  border: dotted #52504f 10px;
+  background-color: #fff5eb;
+  border-bottom: none;
+  width: 5%;
+  margin: 2rem auto;
+}
+h2 {
+  margin: 4rem auto;
+  font-family: "Merriweather", serif;
+}
+
+.form-check-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.button-container {
+  background-color: #126e82;
+}
+
+.checkbox-container {
+  margin-right: 3rem;
+  margin-bottom: 1rem;
+  width: 8rem;
+}
+.form-check-input {
+  width: 1.2rem;
+}
+.form-check-label {
+  text-align: center;
+}
+
+.heading-container {
+  background-color: #126e82;
+}
+
+.container-2 {
+  padding: 2rem;
+  background-color: #126e82;
+  color: #fff5eb;
+}
+
+.radio-label {
+  padding-right: 2.5rem;
+  font-size: 1.4rem;
+}
+
+.second-hr {
+  background-color: #126e82;
+  border: dotted black 10px;
+  border-bottom: none;
+}
+
+.kvk-switch {
+  margin-top: 3rem;
+}
+
+.button-container {
+  padding: 3rem;
+}
+
+.fa-brands {
+  padding: 2rem;
+}
+
+.footer-container {
+  padding-bottom: 3rem;
+}
+.fa-solid {
+  padding-left: 1rem;
+  font-size: 2rem;
+}
+.tables {
+  max-width: 40%;
+}
+.tables-body {
+  background-color: #fff5eb;
+}
+.tables-top {
+  background-color: #126e82;
+}
+.r3-container {
+  background-color: #126e82;
+  padding-bottom: 2rem;
+}
+.table {
+  background-color: #d8e3e7;
+}
+.r3-h2 {
+  color: #fff5eb;
+  padding-top: 2rem;
+}
+.fa-youtube {
+  color: red;
+}
+.fa-line {
+  color: limegreen;
+}
+input[type="radio"]:checked {
+  border: 0.7rem solid BLACK;
+}
+
+.fa-discord {
+  color: #5865f2;
+}

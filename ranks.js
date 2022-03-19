@@ -90,27 +90,50 @@ const playerNames = [
   "xMRTx",
   "xXLupenXx",
   "simpathelab",
+  "Prick Pan",
+  "Cavouras",
 ];
 playerNames.sort();
-
 const divPlayerNames = document.querySelector(`.player-names`);
 const calcRanks = document.querySelector(`.calc-ranks`);
 
 for (let i = 0; i < playerNames.length; i++) {
   const input = document.createElement("input");
   const label = document.createElement("label");
-  const br = document.createElement(`br`);
+  // const br = document.createElement(`br`);
+  const div = document.createElement("div");
   input.type = "checkbox";
-  input.classList.add(`player-${i}`);
+  input.classList.add(`player-${i}`, "form-check-input");
   input.name = `player${i}`;
+  label.classList.add("form-check-label");
+  div.classList.add(
+    `div${i}`,
+    "d-flex",
+    "flex-column",
+    "align-items-center",
+    "checkbox-container"
+  );
   label.textContent = playerNames[i];
-  divPlayerNames.appendChild(input);
-  divPlayerNames.appendChild(label);
-  divPlayerNames.appendChild(br);
+  divPlayerNames.appendChild(div);
+  document.querySelector(`.div${i}`).appendChild(label);
+  document.querySelector(`.div${i}`).appendChild(input);
+
+  // divPlayerNames.appendChild(br);
 }
 
 calcRanks.addEventListener(`click`, function () {
-  let scores, caps, hits, wonder, shield, kvk, totalRally;
+  let scores,
+    caps,
+    hits,
+    wonder,
+    shield,
+    kvk,
+    totalRally,
+    totalCaps,
+    totalWonder,
+    totalHits,
+    totalKVK,
+    totalShields;
 
   !localStorage.getItem("scores")
     ? (scores = [])
@@ -133,14 +156,30 @@ calcRanks.addEventListener(`click`, function () {
   !localStorage.getItem("totalRally")
     ? (totalRally = 0)
     : (totalRally = JSON.parse(localStorage.getItem("totalRally")));
+  !localStorage.getItem("totalCaps")
+    ? (totalCaps = 0)
+    : (totalCaps = JSON.parse(localStorage.getItem("totalCaps")));
+  !localStorage.getItem("totalHits")
+    ? (totalHits = 0)
+    : (totalHits = JSON.parse(localStorage.getItem("totalHits")));
+  !localStorage.getItem("totalWonder")
+    ? (totalWonder = 0)
+    : (totalWonder = JSON.parse(localStorage.getItem("totalWonder")));
+  !localStorage.getItem("totalKVK")
+    ? (totalKVK = 0)
+    : (totalKVK = JSON.parse(localStorage.getItem("totalKVK")));
+  !localStorage.getItem("totalShields")
+    ? (totalShields = 0)
+    : (totalShields = JSON.parse(localStorage.getItem("totalShields")));
 
+  const capChecked = document.getElementById("cappedRally").checked;
+  const hitChecked = document.getElementById("hitRally").checked;
+  const wonderChecked = document.getElementById("wonderRally").checked;
+  const shieldChecked = document.getElementById("shieldRally").checked;
+  const kvkChecked = document.getElementById("kvkRally").checked;
   for (let i = 0; i < playerNames.length; i++) {
     const playerClassChecked = document.querySelector(`.player-${i}`).checked;
-    const capChecked = document.getElementById("cappedRally").checked;
-    const hitChecked = document.getElementById("hitRally").checked;
-    const wonderChecked = document.getElementById("wonderRally").checked;
-    const shieldChecked = document.getElementById("shieldRally").checked;
-    const kvkChecked = document.getElementById("kvkRally").checked;
+
     if (playerClassChecked && scores.length < playerNames.length) {
       if (capChecked) {
         caps.push(1);
@@ -184,6 +223,12 @@ calcRanks.addEventListener(`click`, function () {
       if (kvkChecked) kvk[i]++;
     }
   }
+  if (capChecked) totalCaps++;
+  if (hitChecked) totalHits++;
+  if (wonderChecked) totalWonder++;
+  if (kvkChecked) totalKVK++;
+  if (shieldChecked) totalShields++;
+
   totalRally++;
   localStorage.setItem("scores", JSON.stringify(scores));
   localStorage.setItem("caps", JSON.stringify(caps));
@@ -192,4 +237,9 @@ calcRanks.addEventListener(`click`, function () {
   localStorage.setItem("shield", JSON.stringify(shield));
   localStorage.setItem("kvk", JSON.stringify(kvk));
   localStorage.setItem("totalRally", JSON.stringify(totalRally));
+  localStorage.setItem("totalCaps", JSON.stringify(totalCaps));
+  localStorage.setItem("totalHits", JSON.stringify(totalHits));
+  localStorage.setItem("totalWonder", JSON.stringify(totalWonder));
+  localStorage.setItem("totalKVK", JSON.stringify(totalKVK));
+  localStorage.setItem("totalShields", JSON.stringify(totalShields));
 });
