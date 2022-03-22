@@ -94,6 +94,29 @@ const playerNames = [
   "Cavouras",
   "BlacknYellow",
 ];
+const rank4s = [
+  "Amalia3",
+  "Fotsis",
+  "Juohmaru",
+  "McKueen",
+  "Qn Khaleesi",
+  "SenoritaMeli",
+  "Vetchris",
+  "wwooddyy",
+  "ZitaNitsa",
+];
+const rallyLeaders = [
+  "Cavouras",
+  "Prick Pan",
+  "BatGoonie69",
+  "Sir Mak",
+  "Selinora",
+  "Thanos93GR",
+  "12john34",
+  "BlackFlower1",
+  "Fotsis",
+  "wwooddyy",
+];
 playerNames.sort();
 const initStats = {
   stats: {
@@ -229,7 +252,11 @@ const generateTables = function () {
   const recommended = function () {
     let indexvalue = 1;
     for (let i = 0; i < playerNames.length; i++) {
-      if (storageObj.members[playerNames[i]].average > 18) {
+      if (
+        storageObj.members[playerNames[i]].average > 18 &&
+        !storageObj.members[playerNames[i]].rank4 &&
+        !storageObj.members[playerNames[i]].rallyLeader
+      ) {
         const row = document.createElement("tr");
         const index = document.createElement("th");
         row.classList.add(`tr${i}`);
@@ -294,6 +321,10 @@ if (calcRanks) {
         if (kvkChecked) storageObj.members[player].kvk += 1;
         storageObj.members[player].score += 1;
       }
+
+      if (rank4s.includes(player)) storageObj.members[player].rank4 = true;
+      if (rallyLeaders.includes(player))
+        storageObj.members[player].rallyLeader = true;
       storageObj.members[player].average =
         Math.trunc(
           (storageObj.members[player].score / storageObj.stats.totalRallies) *
